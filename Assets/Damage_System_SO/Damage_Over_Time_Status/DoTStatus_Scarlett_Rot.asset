@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b32960fc726ae314fad0f13415720666, type: 3}
   m_Name: DoTStatus_Scarlett_Rot
   m_EditorClassIdentifier: 
-  duration: 60
-  totalDamageOverDuration: 400
+  data:
+    duration: 60
+    totalDamageOverDuration: 1800

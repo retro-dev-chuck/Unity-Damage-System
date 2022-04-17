@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2912f4cdfbaa0de448e5d8a8482b6c05, type: 3}
   m_Name: Status_Buildup_Poison
   m_EditorClassIdentifier: 
-  resetsAfterTriggering: 0
-  triggersAt: 100
-  damageOnTrigger: 0
-  appliesStatusEffect: 1
-  appliedDoTStatusOnTrigger: {fileID: 11400000, guid: 32d318e8f69fe0e4c8e120270c7a08a3, type: 2}
+  data:
+    _resetsAfterTriggering: 1
+    triggersAt: 100
+    damageOnTrigger: 0
+    appliesDamageOverTimeOnTrigger: 1
+    appliedDamageOverTimeOnTrigger: {fileID: 11400000, guid: 32d318e8f69fe0e4c8e120270c7a08a3, type: 2}

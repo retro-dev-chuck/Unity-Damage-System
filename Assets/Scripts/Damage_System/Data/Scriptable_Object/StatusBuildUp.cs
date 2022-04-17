@@ -4,5 +4,5 @@ using UnityEngine;
 public class StatusBuildUp : ScriptableObject
 {
     [SerializeField] private StatusBuildUpData data;
-
+    public StatusBuildUpData Data => data;
 }
