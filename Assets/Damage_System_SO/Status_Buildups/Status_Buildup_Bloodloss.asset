@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2912f4cdfbaa0de448e5d8a8482b6c05, type: 3}
   m_Name: Status_Buildup_Bloodloss
   m_EditorClassIdentifier: 
-  resetsAfterTriggering: 1
-  triggersAt: 100
-  damageOnTrigger: 300
-  appliesStatusEffect: 0
-  appliedDamageOverTimeStatusOnTrigger: {fileID: 0}
+  data:
+    resetsAfterTriggering: 1
+    triggersAt: 100
+    damageOnTrigger: 300
+    appliesDamageOverTimeOnTrigger: 0
+    appliedDamageOverTimeOnTrigger: {fileID: 0}

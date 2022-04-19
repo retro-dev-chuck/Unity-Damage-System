@@ -20,10 +20,10 @@ public class StatusBuildUpProcessor
         
         foreach (var resistance in _statusResistances)
         {
-            if (!_statusResistanceDataDict.ContainsKey(resistance.getResistanceType))
+            if (!_statusResistanceDataDict.ContainsKey(resistance.ResistanceType))
             {
-                _statusResistanceDataDict.Add(resistance.getResistanceType, resistance);
-                appliedStatusBuildUps.Add(resistance.getResistanceType, 0);
+                _statusResistanceDataDict.Add(resistance.ResistanceType, resistance);
+                appliedStatusBuildUps.Add(resistance.ResistanceType, 0);
             }
         }
     }
@@ -51,5 +51,10 @@ public class StatusBuildUpProcessor
             }
 
         }
+    }
+
+    public int GetBuildUpForStatus(StatusBuildUp buildUp)
+    {
+        return !appliedStatusBuildUps.ContainsKey(buildUp) ? 0 : appliedStatusBuildUps[buildUp];
     }
 }

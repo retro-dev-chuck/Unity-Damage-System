@@ -11,7 +11,7 @@ public class BaseDamageableCharacter: IDamageable
 
     private DamageProcessor _damageProcessor;
     private StatusBuildUpProcessor _statusBuildUpProcessor;
-
+    public BaseDamageableCharacter(){}
     public void Initialize()
     {
         if(damageResistances is { Length: > 0 }){
@@ -23,12 +23,16 @@ public class BaseDamageableCharacter: IDamageable
             _statusBuildUpProcessor = new StatusBuildUpProcessor(ref statusResistances);
         }
         
-        _statusBuildUpProcessor.onStatusEffectTrigger += LogStatusEffect;
+        _statusBuildUpProcessor.onStatusEffectTrigger += InflictStatusEffect;
     }
 
-    private void LogStatusEffect(StatusBuildUp triggeredStatus)
+    private void InflictStatusEffect(StatusBuildUp triggeredStatus)
     {
-        Debug.Log("Character inflicted by "+ triggeredStatus);
+        Debug.Log("Character inflicted by "+ triggeredStatus + " dealing " 
+                  + triggeredStatus.Data.DamageOnTrigger + " extra damage.");
+        
+        //status effect damages are not affected by resistances
+        health = health - triggeredStatus.Data.DamageOnTrigger;
     }
 
     public void Damage(DamageDealer damageDealer)
@@ -39,6 +43,6 @@ public class BaseDamageableCharacter: IDamageable
 
     ~BaseDamageableCharacter()
     {
-        _statusBuildUpProcessor.onStatusEffectTrigger -= LogStatusEffect;
+        _statusBuildUpProcessor.onStatusEffectTrigger -= InflictStatusEffect;
     }
 }

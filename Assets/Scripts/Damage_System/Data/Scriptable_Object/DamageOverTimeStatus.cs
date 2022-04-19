@@ -4,4 +4,14 @@ using UnityEngine;
 public class DamageOverTimeStatus : ScriptableObject
 {
     [SerializeField] private DamageOverTimeStatusData data;
+    
+    public static DamageOverTimeStatus CreateInstance()
+    {
+        return ScriptableObject.CreateInstance<DamageOverTimeStatus>();
+    }
+
+    public void SetData(DamageOverTimeStatusData dotsData)
+    {
+        data = dotsData;
+    }
 }

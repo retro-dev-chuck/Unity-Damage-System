@@ -7,6 +7,7 @@ public class ResistanceDataTests
     public void Setup()
     {
         _resistanceData = new ResistanceData<DamageType>();
+        _resistanceData.ResistanceType = DamageType.GetInstance();
     }
     [Test]
     public void ZeroAddedResistanceReturnsUnaffectedDamage()

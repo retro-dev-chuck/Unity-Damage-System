@@ -15,9 +15,9 @@ public class DamageProcessor
 
         foreach (var resistance in _damageResistances)
         {
-            if (!_resistanceDataDict.ContainsKey(resistance.getResistanceType))
+            if (!_resistanceDataDict.ContainsKey(resistance.ResistanceType))
             {
-                _resistanceDataDict.Add(resistance.getResistanceType, resistance);
+                _resistanceDataDict.Add(resistance.ResistanceType, resistance);
             }
         }
     }
